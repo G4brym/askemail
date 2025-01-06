@@ -1,0 +1,26 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "askemail-worker"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+# Uncomment this to send emails via workers
+send_email = [
+	{name = "EMAIL", allowed_destination_addresses = ["g4bryrm98@gmail.com"]},
+]
+
+[ai]
+binding = "AI"
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "askemail-db"
+database_id = "baefb96d-84ed-40a2-bdd9-2d082565612a"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "askemail-index"
