@@ -4,8 +4,5 @@ interface Env {
 	DB: D1Database;
 	AI: Ai;
 	VECTORIZE: VectorizeIndex;
-	EMAIL: SendEmail;
 	GOOGLE_AI_KEY: string;
-	AWS_ACCESS_KEY: string;
-	AWS_SECRET_KEY: string;
 }

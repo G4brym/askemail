@@ -6,22 +6,23 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
+    "lint": "npx @biomejs/biome check src/ || (npx @biomejs/biome check --write src/; exit 1)",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241230.0",
-    "typescript": "^5.7.2",
-    "wrangler": "^3.100.0"
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20250419.0",
+    "typescript": "^5.8.3",
+    "wrangler": "^4.12.0"
   },
   "dependencies": {
-    "@ai-sdk/google": "^1.0.13",
-    "@aws-sdk/client-ses": "^3.726.0",
-    "ai": "^4.0.29",
-    "marked": "^15.0.6",
+    "@ai-sdk/google": "^1.2.12",
+    "ai": "^4.3.9",
+    "marked": "^15.0.8",
     "mimemessage": "^1.0.5",
     "mimetext": "^3.0.27",
-    "postal-mime": "^2.4.1",
-    "workers-qb": "^1.8.0",
-    "zod": "^3.24.1"
+    "postal-mime": "^2.4.3",
+    "workers-qb": "^1.10.2",
+    "zod": "^3.24.3"
   }
 }
