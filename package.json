@@ -1,7 +1,6 @@
 {
   "name": "askemail-worker",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
@@ -11,6 +10,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "^2.30.0",
     "@cloudflare/workers-types": "^4.20250419.0",
     "typescript": "^5.8.3",
     "wrangler": "^4.12.0"
