@@ -21,7 +21,7 @@ export default {
 			console.error(
 				JSON.stringify({
 					name: e.name,
-					messages: e.messages,
+					message: e.message,
 					stack: e.stack,
 				}),
 			);
@@ -174,7 +174,9 @@ Email Body: ${email.html ?? email.text}`;
 								ids.push(match.id);
 							}
 						}
-					} else {
+					}
+
+					if (ids.length === 0) {
 						return {
 							success: false,
 							error: "No matching memories found for the text received, you may try again with different text.",
@@ -239,10 +241,10 @@ async function handleNewEmail(message: ForwardableEmailMessage, email: Email, en
 		rateLimited = true;
 		console.log(`Rate limited ${email.from.address} for today for using ${todayEmails.results.total} emails :/`);
 		modelResponse = {
-			response: `## You just reached today\'s limit for AskEmail :(
+			response: `## You just reached today's limit for AskEmail :(
 But don't worry, this will reset today at midnight UTC`,
 			subject: "You just reached today's limit for AskEmail :(",
-			html: await marked.parse(`## You just reached today\'s limit for AskEmail :(
+			html: await marked.parse(`## You just reached today's limit for AskEmail :(
 But don't worry, this will reset today at midnight UTC`),
 		};
 	} else {
